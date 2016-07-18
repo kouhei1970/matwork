@@ -6,13 +6,13 @@ struct matrix{
   int low;    //行列の行数
   int column; //行列の列数
   double* data;  //行列の中身を格納するポインタ
-}
+};
 
 //ベクトルを表す構造体のテンプレート
 struct vector{
   int low;    //ベクトルの次元数
   double* data;  //行列の中身を格納するポインタ
-}
+};
 
 int matrixCreate(int low, int column, double* matdata,struct matrix mat){
   mat.data = matdata;
@@ -33,6 +33,7 @@ int matrixPrint(struct matrix mat){
   for (i=0; i<mat.low; i++) {
     for (j=0; j<mat.column; j++) {
       printf("%10.3f ",*(mat.data));
+      //printf("hoge");
     }
     printf("\n");
   }
@@ -40,8 +41,8 @@ int matrixPrint(struct matrix mat){
 }
 
 int main(){
-  double a={1.0, 2.0, 3.0, 4.0};
-  double b={5.0, 6.0, 7.0, 8.0};
+  double a[]={1.0, 2.0, 3.0, 4.0};
+  double b[]={5.0, 6.0, 7.0, 8.0};
   struct matrix A;
   struct matrix B;
   
