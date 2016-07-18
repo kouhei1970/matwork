@@ -14,29 +14,29 @@ struct vector{
   double* data;  //行列の中身を格納するポインタ
 };
 
-int matrixCreate(int low, int column, double* matdata,struct matrix mat){
-  mat.data = matdata;
-  mat.low = low;
-  mat.column = column;
+int matrixCreate(int low, int column, double* matdata,struct matrix *mat){
+  mat->data = matdata;
+  mat->low = low;
+  mat->column = column;
   return 0;
 }
 
-int vectorCreate(int low, double* vectordata,struct matrix vector){
-  vector.data = vectordata;
-  vector.low = low;
+int vectorCreate(int low, double* vectordata,struct matrix *vector){
+  vector->data = vectordata;
+  vector->low = low;
   return 0;
 }
 
 int matrixPrint(struct matrix mat){
   int i,j;
-  
   for (i=0; i<mat.low; i++) {
     for (j=0; j<mat.column; j++) {
-      printf("%10.3f ",*(mat.data));
+      printf("%10.3f ",*(mat.data+j+i*mat.column));
       //printf("hoge");
     }
     printf("\n");
   }
+  printf("\n");
   return 0;
 }
 
@@ -46,11 +46,12 @@ int main(){
   struct matrix A;
   struct matrix B;
   
-  matrixCreate(2,2,a,A);
-  matrixCreate(2,2,b,B);
+  matrixCreate(1,4,a,&A);
+  matrixCreate(2,2,b,&B);
   
   matrixPrint(A);
-  
+  matrixPrint(B);
+
   return 0;
 }
 
