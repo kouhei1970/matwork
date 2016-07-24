@@ -142,7 +142,7 @@ int matrixTranspose(struct matrix src, struct matrix dst){
 }
 
 
-
+#if 0
 int main(){
   double a[]={1.0, 2.0, 3.0, 4.0};
   double b[]={5.0, 6.0, 7.0, 8.0, 9.0, 10.0};
@@ -210,4 +210,5 @@ int main(){
 
   return 0;
 }
+#endif
 
