@@ -29,7 +29,7 @@ int matrixCreate(int low, int column, double* matdata,struct matrix *mat){
 }
 
 //ベクトルの生成（実際はベクトルは１列の行列と同じ）
-int vectorCreate(int low, double* vectordata,struct matrix *vector){
+int vectorCreate(int low, double* vectordata,struct vector *vector){
   vector->data = vectordata;
   vector->low = low;
   vector->column = 1;
